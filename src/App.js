@@ -1,11 +1,23 @@
+import React, { useState } from 'react';
+
 import './App.css';
-import SetName from './components/SetName/SetName'
+import SetName from './components/SetName/SetName';
+import ContextApi from './components/ContextApi/ContextApi';
+
+const initialState = 0;
+export const context = React.createContext(null);
 
 function App() {
+
+  const [value, setValue] = useState(initialState);
+
   return (
-    <div className="App">
-      <SetName/>
-    </div>
+    <context.Provider value={{ value, setValue }}>
+      <div>
+        {/* <SetName /> */}
+        <ContextApi/>
+      </div>
+    </context.Provider>
   );
 }
 
