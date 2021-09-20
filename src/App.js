@@ -1,21 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Switch, Route } from "react-router-dom";
 
-import './App.css';
-import SetName from './components/SetName/SetName';
-import ContextApi from './components/ContextApi/ContextApi';
+import "./App.css";
+import SetName from "./components/SetName/SetName";
+import ContextApi from "./components/ContextApi/ContextApi";
+import Navbar from "./components/Navbar/Navbar";
 
 const initialState = 0;
 export const context = React.createContext(null);
 
 function App() {
-
   const [value, setValue] = useState(initialState);
 
   return (
     <context.Provider value={{ value, setValue }}>
       <div>
-        <SetName />
-        {/* <ContextApi/> */}
+        <Navbar />
+        <Switch>
+          <Route path="/" exact component={SetName} />
+          <Route path="/counter" exact component={ContextApi} />
+        </Switch>
       </div>
     </context.Provider>
   );
