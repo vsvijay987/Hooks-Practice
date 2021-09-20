@@ -17,6 +17,11 @@ export default class Navbar extends Component {
               Counter
             </NavLink>
           </li>
+          <li>
+            <NavLink exact activeClassName="active" to="/reducer">
+              Reducer
+            </NavLink>
+          </li>
         </ul>
       </>
     );
