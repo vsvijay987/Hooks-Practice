@@ -14,8 +14,8 @@ function App() {
   return (
     <context.Provider value={{ value, setValue }}>
       <div>
-        {/* <SetName /> */}
-        <ContextApi/>
+        <SetName />
+        {/* <ContextApi/> */}
       </div>
     </context.Provider>
   );
